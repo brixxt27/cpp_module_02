@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Fixed.hpp"
 
 const int Fixed::_fractional_bits = 8;
@@ -9,24 +10,20 @@ Fixed::Fixed()
 }
 
 Fixed::Fixed(const int raw)
-	: _raw_bits(raw)
 {
 	std::cout << "Int constructor called" << std::endl;
+	_raw_bits = raw << 8;
 }
 
-/**
- * float 을 int 형으로 변경하는 법 알아보기
- */
 Fixed::Fixed(const float raw)
-	: _raw_bits(raw)
 {
+	_raw_bits = roundf(raw * (1 << _fractional_bits));
 	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	//_raw_bits = other._raw_bits;
 	this->operator=(other);
 }
 
@@ -53,19 +50,19 @@ float	Fixed::toFloat(void) const
 
 int	Fixed::toInt(void) const
 {
-	return _raw_bits;
+	return _raw_bits >> 8;
 }
 
 std::ostream&	operator<<(std::ostream& out, const Fixed& rhs)
 {
-	std::cout << rhs.getRawBits();
+	out << rhs.getRawBits();
 
 	return out;
 }
 
 int	Fixed::getRawBits(void) const
 {
-	return _raw_bits;
+	return _raw_bits >> 8;
 }
 
 //void	Fixed::setRawBits(int const raw)
