@@ -28,10 +28,10 @@ public:
 	float	operator*(const Fixed& rhs) const;
 	float	operator/(const Fixed& rhs) const;
 
-	float&	operator++();
-	float	operator++(int);
-	float&	operator--();
-	float	operator--(int);
+	Fixed&	operator++();
+	Fixed	operator++(int);
+	Fixed&	operator--();
+	Fixed	operator--(int);
 
 	static Fixed&	min(Fixed& lhs, Fixed& rhs);
 	static Fixed&	max(Fixed& lhs, Fixed& rhs);

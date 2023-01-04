@@ -121,10 +121,33 @@ float	Fixed::operator/(const Fixed& rhs) const
  * Increment / Decrement (pre- , post- )operators
  */
 
-//float&	Fixed::operator++();
-//float	Fixed::operator++(int);
-//float&	Fixed::operator--();
-//float	Fixed::operator--(int);
+Fixed&	Fixed::operator++()
+{
+	++_raw_bits;
+	return *this;
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp(*this);
+
+	++(*this);
+	return temp;
+}
+
+Fixed&	Fixed::operator--()
+{
+	--_raw_bits;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp(*this);
+
+	--(*this);
+	return temp;
+}
 
 /**
  * Static member functions
