@@ -153,7 +153,25 @@ Fixed	Fixed::operator--(int)
  * Static member functions
  */
 
-//static Fixed&	Fixed::min(Fixed& lhs, Fixed& rhs);
-//static Fixed&	Fixed::max(Fixed& lhs, Fixed& rhs);
-//static Fixed&	Fixed::min(const Fixed& lhs, const Fixed& rhs);
-//static Fixed&	Fixed::max(const Fixed& lhs, const Fixed& rhs);
+Fixed&	Fixed::min(Fixed& lhs, Fixed& rhs)
+{
+	return (lhs.toFloat() > rhs.toFloat()) ? rhs : lhs;
+}
+
+Fixed&	Fixed::max(Fixed& lhs, Fixed& rhs)
+{
+	return (lhs.toFloat() > rhs.toFloat()) ? lhs : rhs;
+
+}
+
+//Fixed&	Fixed::min(const Fixed& lhs, const Fixed& rhs)
+//{
+//	if (lhs.toFloat() > rhs.toFloat())
+//		return rhs;
+//	return lhs;
+//}
+
+//Fixed&	Fixed::max(const Fixed& lhs, const Fixed& rhs)
+//{
+//	return (lhs.toFloat() > rhs.toFloat()) ? lhs : rhs;
+//}
