@@ -96,13 +96,26 @@ bool	Fixed::operator!=(const Fixed& rhs) const
  * Arithmetic operators
  */
 
-//float	Fixed::operator+(const Fixed& rhs) const;
-//float	Fixed::operator-(const Fixed& rhs) const;
+float	Fixed::operator+(const Fixed& rhs) const
+{
+
+	return toFloat() + rhs.toFloat();
+}
+
+float	Fixed::operator-(const Fixed& rhs) const
+{
+	return toFloat() - rhs.toFloat();
+}
+
 float	Fixed::operator*(const Fixed& rhs) const
 {
 	return toFloat() * rhs.toFloat();
 }
-//float	Fixed::operator/(const Fixed& rhs) const;
+
+float	Fixed::operator/(const Fixed& rhs) const
+{
+	return toFloat() / rhs.toFloat();
+}
 
 /**
  * Increment / Decrement (pre- , post- )operators

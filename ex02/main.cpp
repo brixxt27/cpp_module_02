@@ -12,5 +12,33 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	//std::cout << Fixed::max( a, b ) << std::endl;
+
+
+	std::cout << "\n\n==== My test ====" << std::endl;
+
+	bool	value;
+
+	value = a < b;
+	std::cout << value << std::endl;
+
+	value = a > b;
+	std::cout << value << std::endl;
+
+	value = a <= b;
+	std::cout << value << std::endl;
+
+	value = a >= b;
+	std::cout << value << std::endl;
+
+	value = a == b;
+	std::cout << value << std::endl;
+
+	value = a != b;
+	std::cout << value << std::endl;
+
+	std::cout << a + b << std::endl;
+	std::cout << a - b << std::endl;
+	std::cout << a * b << std::endl;
+	std::cout << a / b << std::endl;
 	return 0;
 }
