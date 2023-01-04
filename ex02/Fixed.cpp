@@ -58,12 +58,43 @@ int	Fixed::toInt(void) const
 	return _raw_bits >> _fractional_bits;
 }
 
-//bool	Fixed::operator>(const Fixed& rhs) const;
-//bool	Fixed::operator<(const Fixed& rhs) const;
-//bool	Fixed::operator>=(const Fixed& rhs) const;
-//bool	Fixed::operator<=(const Fixed& rhs) const;
-//bool	Fixed::operator==(const Fixed& rhs) const;
-//bool	Fixed::operator!=(const Fixed& rhs) const;
+/**
+ * Comparison operators
+ */
+
+bool	Fixed::operator>(const Fixed& rhs) const
+{
+	return toFloat() > rhs.toFloat();
+}
+
+bool	Fixed::operator<(const Fixed& rhs) const
+{
+	return toFloat() < rhs.toFloat();
+}
+
+bool	Fixed::operator>=(const Fixed& rhs) const
+{
+	return toFloat() >= rhs.toFloat();
+}
+
+bool	Fixed::operator<=(const Fixed& rhs) const
+{
+	return toFloat() <= rhs.toFloat();
+}
+
+bool	Fixed::operator==(const Fixed& rhs) const
+{
+	return toFloat() == rhs.toFloat();
+}
+
+bool	Fixed::operator!=(const Fixed& rhs) const
+{
+	return toFloat() != rhs.toFloat();
+}
+
+/**
+ * Arithmetic operators
+ */
 
 //float	Fixed::operator+(const Fixed& rhs) const;
 //float	Fixed::operator-(const Fixed& rhs) const;
@@ -73,7 +104,20 @@ float	Fixed::operator*(const Fixed& rhs) const
 }
 //float	Fixed::operator/(const Fixed& rhs) const;
 
+/**
+ * Increment / Decrement (pre- , post- )operators
+ */
+
 //float&	Fixed::operator++();
 //float	Fixed::operator++(int);
 //float&	Fixed::operator--();
 //float	Fixed::operator--(int);
+
+/**
+ * Static member functions
+ */
+
+//static Fixed&	Fixed::min(Fixed& lhs, Fixed& rhs);
+//static Fixed&	Fixed::max(Fixed& lhs, Fixed& rhs);
+//static Fixed&	Fixed::min(const Fixed& lhs, const Fixed& rhs);
+//static Fixed&	Fixed::max(const Fixed& lhs, const Fixed& rhs);
