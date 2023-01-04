@@ -204,18 +204,18 @@ Point.{h, hpp}, Point.cpp, bsp.cpp
 BSP 는 Binary Space Partitioning 를 나타낸다. 환영한다! :)
 ex03을 하지 않아도 통과할 수 있다.
 ```
-- 신발끈 방식으로 진행. 삼각형 변 위에 점이 있을 경우에 대한 예외처리만 해두면 점을 찍은 뒤 삼각형의 각 꼭지점에서 그 점으로 이으면 세 개의 삼각형이 만들어지는데 이 세 개의 삼각형 합이 가장 큰 삼각형의 크기와 같으면 true.
-- private 멤버:
-	-  A Fixed const attribute x.
-	-  A Fixed const attribute y.
-	-  Anything else useful.
-- public 멤버:
-	- x, y 를 각각 0으로 초기화 하는 기본 생성자.
-	- 두 개의 const 부동 소수를 인자로 받는 생성자. x, y가 인자로 들어온 값으로 각각 초기화 된다.
-	- 복사 생성자
-	- operator= 오버로딩
-	- 소멸자
-	- 유용한 여러 함수들...
+- 2D 점을 나타내는 Orthodox Canonical Form 의 Point class 를 구현해보자!
+	- private 멤버:
+		-  A Fixed const attribute x.
+		-  A Fixed const attribute y.
+		-  Anything else useful.
+	- public 멤버:
+		- x, y 를 각각 0으로 초기화 하는 기본 생성자.
+		- 두 개의 const 부동 소수를 인자로 받는 생성자. x, y가 인자로 들어온 값으로 각각 초기화 된다.
+		- 복사 생성자
+		- operator= 오버로딩
+		- 소멸자
+		- 유용한 여러 함수들...
 - 결론적으로 아래의 함수를 적절한 파일 안에 구현합니다.
 ```
 bool bsp( Point const a, Point const b, Point const c, Point const point );
