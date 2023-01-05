@@ -118,7 +118,7 @@ float	Fixed::operator/(const Fixed& rhs) const
 }
 
 /**
- * Increment / Decrement (pre- , post- )operators
+ * Increment / Decrement (prefix / postfix) operators
  */
 
 Fixed&	Fixed::operator++()

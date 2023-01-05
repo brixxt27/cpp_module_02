@@ -1,5 +1,7 @@
-NAME	=	now_we_are_talking
-SRCS	=	main.cpp \
-			Fixed.cpp
+NAME	=	bsp
+SRCS	=	main.cpp	\
+			Fixed.cpp	\
+			Point.cpp	\
+			bsp.cpp
 INCS	=	Fixed.hpp
 include ../template.mk

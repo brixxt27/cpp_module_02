@@ -7,19 +7,18 @@ class Point {
 public:
 	Point();
 	Point(const float x, const float y);
-	Point(const Fixed& other);
+	Point(const Point& other);
 	Point& operator=(const Point& rhs);
 	~Point();
-	/**
-	 * anything else useful
-	*/
+	
+	const Fixed&	GetX() const;
+	const Fixed&	GetY() const;
 
 private:
-	const Fixed	x;
-	const Fixed	y;
-	/**
-	 * anything else useful
-	*/
+	const Fixed	_x;
+	const Fixed	_y;
+
+	void	PrintErrorCopyAssignmnet() const;
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point );

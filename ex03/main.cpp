@@ -1,44 +1,14 @@
-#include "Fixed.hpp"
+#include "Point.hpp"
 #include <iostream>
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point	a;
+	Point	b(50.5, 100.45);
+	Point	c(100.45, 50.9);
+	Point	point(50.5, 100.43);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-
-	//std::cout << "\n\n==== My test ====" << std::endl;
-
-	//bool	value;
-
-	//value = a < b;
-	//std::cout << value << std::endl;
-
-	//value = a > b;
-	//std::cout << value << std::endl;
-
-	//value = a <= b;
-	//std::cout << value << std::endl;
-
-	//value = a >= b;
-	//std::cout << value << std::endl;
-
-	//value = a == b;
-	//std::cout << value << std::endl;
-
-	//value = a != b;
-	//std::cout << value << std::endl;
-
-	//std::cout << a + b << std::endl;
-	//std::cout << a - b << std::endl;
-	//std::cout << a * b << std::endl;
-	//std::cout << a / b << std::endl;
+	std::cout << bsp(a, b, c, point) << "\n\n" << std::endl;
+	b = c;
+	std::cout << bsp(a, b, c, point) << "\n\n" << std::endl;
 	return 0;
 }
